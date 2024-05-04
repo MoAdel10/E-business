@@ -2,13 +2,13 @@
 
 export function addToHead(tasks){
     var task = prompt("Please provide task name");
-    if (task !== null) tasks.unshift(task);
+    if (task !== "") tasks.unshift(task);
     else console.log("Task addition cancelled.");
 }
 
 export function addToTail(tasks){
     var task = prompt("Please provide task name");
-    if (task !== null) tasks.push(task);
+    if (task !== "") tasks.push(task);
     else console.log("Task addition cancelled.");
 }
 
@@ -17,7 +17,7 @@ export function addToSpecific(tasks, repeats = 1){
         var index = parseInt(prompt("Please provide the place"));
         if (index >= 1 && index < (tasks.length + 1)) {
             var task = prompt("Please provide task name");
-            if (task !== null) tasks.splice(index - 1, 0, task);
+            if (task !== "") tasks.splice(index - 1, 0, task);
             else console.log("Task addition cancelled.");
         } else {
             console.log("Invalid index or no task at index " + index + ".");
