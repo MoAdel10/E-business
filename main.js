@@ -19,8 +19,17 @@ const addMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place\n4-Add mul
 const addMultiMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place";
 const deleteMsg = "1-delete first task\n2-delete last task\n3-delete by index\n4-delete by name\n5-delete from x to y tasks";
 
-let testArr = ["Task1", "Task2", "Task3"];
+let testArr = [];
+function saveList(tasks) { 
+    localStorage.setItem("last_update", JSON.stringify(tasks));
+}
 
+function loadList() {
+    const storedTasks = localStorage.getItem("last_update");
+    testArr= JSON.parse(storedTasks);
+}
+//Load Data From localStorage but Help we need a delete all function because i wanna clear the localStorage T-T.
+loadList();
 
 function DisplayMenu(){
     let input = prompt(mainMsg);
@@ -46,12 +55,12 @@ function DisplayMenu(){
                 addMultiple(testArr, addMultiMsg);
                 console.log(testArr);
             }
-
+            
         }
         if(input == 3){
             let deleteInput = prompt(deleteMsg);
             // console.log(deleteInput);
-
+            
             if(deleteInput == 1){
                 deleteFirstTask(testArr);
                 console.log(testArr);
@@ -73,16 +82,18 @@ function DisplayMenu(){
             if(deleteInput == 5){
                 let delX =  prompt("Please provide the head of the tasks to delete 'X'");
                 let delY =  prompt("Please provide the tail of the tasks to delete 'Y'");
-                deleteFromXToY(parseInt(delX),parseInt(delY),testArr);
+                deleteFromXToY(parseInt(delX),parseInt(delY),testArr); 
                 console.log(testArr);
             }
+
 
         }
     }
 }
 
-
 let receivingInput = true;
 while(receivingInput){
+    // Save Array Data Into localStorage.
+    saveList(testArr);
     DisplayMenu();
 }
