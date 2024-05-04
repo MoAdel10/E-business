@@ -6,11 +6,20 @@ import {
     deleteFromXToY
 } from './Delete.js';
 
+import {
+    addToHead,
+    addToTail,
+    addToSpecific,
+    addMultiple
+} from './Add.js';
+
 // Messages
-const mainMsg = "1-Add a task\n2-Search for a task\n3-Delete a task\n4-Display tasks"
+const mainMsg = "1-Add a task\n2-Search for a task\n3-Delete a task\n4-Display tasks";
+const addMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place\n4-Add multiple tasks";
+const addMultiMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place";
 const deleteMsg = "1-delete first task\n2-delete last task\n3-delete by index\n4-delete by name\n5-delete from x to y tasks";
 
-let testArr = ["t1","t2","t3","t4"];
+let testArr = ["Task1", "Task2", "Task3"];
 
 
 function DisplayMenu(){
@@ -18,6 +27,27 @@ function DisplayMenu(){
     if(input == null || input == ""){
         receivingInput = false
     }else{
+        if(input == 1){
+            let addInput = prompt(addMsg);
+            
+            if(addInput == 1){
+                addToHead(testArr);
+                console.log(testArr);
+            }
+            if(addInput == 2){
+                addToTail(testArr);
+                console.log(testArr);
+            }
+            if(addInput == 3){
+                addToSpecific(testArr)
+                console.log(testArr);
+            }
+            if(addInput == 4){
+                addMultiple(testArr, addMultiMsg);
+                console.log(testArr);
+            }
+
+        }
         if(input == 3){
             let deleteInput = prompt(deleteMsg);
             // console.log(deleteInput);

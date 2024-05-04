@@ -19,8 +19,8 @@ export function deleteLastTask(tasks) {
 }
 
 export function deleteWithIndex(index,tasks) {
-    if (index >= 0 && index < tasks.length) {
-        tasks.splice(index, 1);
+    if (index >= 1 && index < (tasks.length + 1)) {
+        tasks.splice((index - 1), 1);
     } else {
         console.log("Invalid index or no task at index " + index + ".");
     }
@@ -36,8 +36,8 @@ export function deleteWithName(name,tasks) {
 }
 
 export function deleteFromXToY(x, y,tasks) {
-    if (x >= 0 && x <= y && y < tasks.length) {
-        tasks.splice(x, y - x + 1);
+    if (x >= 1 && x <= y && y < (tasks.length + 1)) {
+        tasks.splice((x - 1), (y - x + 1));
     } else {
         console.log("Invalid range or not enough tasks.");
     }
