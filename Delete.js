@@ -42,3 +42,7 @@ export function deleteFromXToY(x, y,tasks) {
         console.log("Invalid range or not enough tasks.");
     }
 }
+
+export function deleteAll(tasks){
+    tasks.splice(0, tasks.length);
+}

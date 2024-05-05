@@ -3,7 +3,8 @@ import {
     deleteLastTask,
     deleteWithIndex,
     deleteWithName,
-    deleteFromXToY
+    deleteFromXToY,
+    deleteAll
 } from './Delete.js';
 
 import {
@@ -17,7 +18,7 @@ import {
 const mainMsg = "1-Add a task\n2-Search for a task\n3-Delete a task\n4-Display tasks";
 const addMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place\n4-Add multiple tasks";
 const addMultiMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place";
-const deleteMsg = "1-delete first task\n2-delete last task\n3-delete by index\n4-delete by name\n5-delete from x to y tasks";
+const deleteMsg = "1-Delete first task\n2-Delete last task\n3-Delete by index\n4-Delete by name\n5-Delete from x to y tasks\n6-Delete all";
 
 let testArr = [];
 function saveList(tasks) { 
@@ -85,7 +86,10 @@ function DisplayMenu(){
                 deleteFromXToY(parseInt(delX),parseInt(delY),testArr); 
                 console.log(testArr);
             }
-
+            if(deleteInput == 6){
+                deleteAll(testArr);
+                console.log(testArr);
+            }
 
         }
     }

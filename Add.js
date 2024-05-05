@@ -4,7 +4,6 @@ export function addToHead(tasks){
     var task = prompt("Please provide task name");
     if (task !== "") tasks.unshift(task);
     else console.log("Task addition cancelled.");
-    localStorage.setItem("last update",tasks);
 }
 
 export function addToTail(tasks){
