@@ -2,14 +2,18 @@
 
 export function addToHead(tasks){
     var task = prompt("Please provide task name");
-    if (task !== "") tasks.unshift(task);
-    else console.log("Task addition cancelled.");
+    if (task !== "") 
+        tasks.unshift(task);
+    else 
+        console.log("Task addition cancelled.");
 }
 
 export function addToTail(tasks){
     var task = prompt("Please provide task name");
-    if (task !== "") tasks.push(task);
-    else console.log("Task addition cancelled.");
+    if (task !== "") 
+        tasks.push(task);
+    else 
+        console.log("Task addition cancelled.");
 }
 
 export function addToSpecific(tasks, repeats = 1){
@@ -17,8 +21,25 @@ export function addToSpecific(tasks, repeats = 1){
         var index = parseInt(prompt("Please provide the place"));
         if (index >= 1 && index < (tasks.length + 1)) {
             var task = prompt("Please provide task name");
-            if (task !== "") tasks.splice(index - 1, 0, task);
-            else console.log("Task addition cancelled.");
+            if (task !== "") 
+                tasks.splice(index - 1, 0, task);
+            else 
+                console.log("Task addition cancelled.");
+        } else {
+            console.log("Invalid index or no task at index " + index + ".");
+        }
+    }
+}
+
+export function editTask(tasks, repeats = 1){
+    for(let i = 1; i <= repeats; i++){
+        var index = parseInt(prompt("Please provide the place"));
+        if (index >= 1 && index < (tasks.length + 1)) {
+            var task = prompt("Please provide task new name");
+            if (task !== "") 
+                tasks.splice(index - 1, 1, task);
+            else 
+                console.log("Task addition cancelled.");
         } else {
             console.log("Invalid index or no task at index " + index + ".");
         }
@@ -34,10 +55,19 @@ export function addMultiple(tasks, addMsg){
     }
     if(choice > 0 && choice <= 5){
     var addChoice = prompt(addMsg);
-    if(addChoice == 1) repeatOperation(choice, () => addToHead(tasks));
-    if(addChoice == 2) repeatOperation(choice, () => addToTail(tasks));
-    if(addChoice == 3) addToSpecific(tasks, choice)
+    if(addChoice == 1) 
+        repeatOperation(choice, () => addToHead(tasks));
+    if(addChoice == 2) 
+        repeatOperation(choice, () => addToTail(tasks));
+    if(addChoice == 3) 
+        addToSpecific(tasks, choice)
     } else {
         console.log("Invalid value or out of range");
     }
+}
+
+export function editMultiple(tasks){
+    var choice = parseInt(prompt("Please provide number of tasks you want to edit"));
+    if(choice > 0 && choice <= tasks.length)
+        editTask(tasks, choice);
 }

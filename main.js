@@ -11,12 +11,14 @@ import {
     addToHead,
     addToTail,
     addToSpecific,
-    addMultiple
+    editTask,
+    addMultiple,
+    editMultiple
 } from './Add.js';
 
 // Messages
 const mainMsg = "1-Add a task\n2-Search for a task\n3-Delete a task\n4-Display tasks";
-const addMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place\n4-Add multiple tasks";
+const addMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place\n4-Edit task\n5-Add multiple tasks\n6-Edit multiple tasks";
 const addMultiMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place";
 const deleteMsg = "1-Delete first task\n2-Delete last task\n3-Delete by index\n4-Delete by name\n5-Delete from x to y tasks\n6-Delete all";
 
@@ -53,7 +55,17 @@ function DisplayMenu(){
                 console.log(testArr);
             }
             if(addInput == 4){
+                console.log(testArr);
+                editTask(testArr);
+                console.log(testArr);
+            }
+            if(addInput == 5){
                 addMultiple(testArr, addMultiMsg);
+                console.log(testArr);
+            }
+            if(addInput == 6){
+                console.log(testArr);
+                editMultiple(testArr);
                 console.log(testArr);
             }
             
