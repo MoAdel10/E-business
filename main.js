@@ -16,6 +16,14 @@ import {
     editMultiple
 } from './Add.js';
 
+import {
+    displayRevers,
+    display,
+    displaySorted
+} from "./display.js"
+
+
+
 // Messages
 const mainMsg = "1-Add a task\n2-Search for a task\n3-Delete a task\n4-Display tasks";
 const addMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place\n4-Edit task\n5-Add multiple tasks\n6-Edit multiple tasks";
@@ -44,29 +52,29 @@ function DisplayMenu(){
             
             if(addInput == 1){
                 addToHead(testArr);
-                console.log(testArr);
+                display(testArr)
             }
             if(addInput == 2){
                 addToTail(testArr);
-                console.log(testArr);
+                display(testArr)
             }
             if(addInput == 3){
                 addToSpecific(testArr)
-                console.log(testArr);
+                display(testArr)
             }
             if(addInput == 4){
-                console.log(testArr);
+                display(testArr)
                 editTask(testArr);
-                console.log(testArr);
+                display(testArr)
             }
             if(addInput == 5){
                 addMultiple(testArr, addMultiMsg);
-                console.log(testArr);
+                display(testArr)
             }
             if(addInput == 6){
-                console.log(testArr);
+                display(testArr)
                 editMultiple(testArr);
-                console.log(testArr);
+                display(testArr)
             }
             
         }
@@ -76,33 +84,36 @@ function DisplayMenu(){
             
             if(deleteInput == 1){
                 deleteFirstTask(testArr);
-                console.log(testArr);
+                display(testArr)
             }
             if(deleteInput == 2){
                 deleteLastTask(testArr);
-                console.log(testArr);
+                display(testArr)
             }
             if(deleteInput == 3){
                 let delIndex = prompt("Please provide the index of the task to delete");
                 deleteWithIndex(parseInt(delIndex),testArr);
-                console.log(testArr);
+                display(testArr)
             }
             if(deleteInput == 4){
                 let delName = prompt("Please provide the name of task to delete");
                 deleteWithName(delName,testArr);
-                console.log(testArr);
+                display(testArr)
             }
             if(deleteInput == 5){
                 let delX =  prompt("Please provide the head of the tasks to delete 'X'");
                 let delY =  prompt("Please provide the tail of the tasks to delete 'Y'");
                 deleteFromXToY(parseInt(delX),parseInt(delY),testArr); 
-                console.log(testArr);
+                display(testArr)
             }
             if(deleteInput == 6){
                 deleteAll(testArr);
-                console.log(testArr);
+                display(testArr)
             }
 
+        }
+        if(input == 4){
+            display(testArr)
         }
     }
 }
