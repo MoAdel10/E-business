@@ -14,6 +14,7 @@ export function display(arr) {
 }
 
 export function displaySorted(arr) {
+    arr = [...arr].sort();
     console.clear()
     for (let i = 0; i < arr.length; i++) {
         console.log((i + 1) + "- " + arr[i]);
