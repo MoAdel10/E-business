@@ -121,28 +121,28 @@ function DisplayMenu() {
                 case 2:
                     console.clear();
                     StrictNameToSearch = prompt("Enter the Strict name to search:");
-                    console.log(searchByStrictName(testArr, StrictNameToSearch)[0].name);
+                    console.log(searchByStrictName(testArr, StrictNameToSearch));
                     break;
                 case 3:
                     console.clear();
                     nameToSearch = prompt("Enter the name to search:");
-                    console.log(searchByName(testArr, nameToSearch)[0].name);
+                    console.log(searchByName(testArr, nameToSearch));
                     break;
                 case 4:
                     console.clear();
                     startingString = prompt("Enter the starting string to search:");
-                    console.log(searchByStarting(testArr, startingString)[0].name);
+                    console.log(searchByStarting(testArr, startingString));
                     break;
                 case 5:
                     console.clear();
                     endingString = prompt("Enter the ending string to search:");
-                    console.log(searchByEnding(testArr, endingString)[0].name);
+                    console.log(searchByEnding(testArr, endingString));
                     break;
                 case 6:
                     console.clear();
                     start = parseInt(prompt("Enter the start index:"));
                     end = parseInt(prompt("Enter the end index:"));
-                    console.log(searchByIndexRange(testArr, start, end)[0].name);
+                    console.log(searchByIndexRange(testArr, start, end));
                     break;
                 default:
                     console.clear();
