@@ -41,14 +41,7 @@ const addMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place\n4-Edit ta
 const addMultiMsg = "1-Add to head\n2-Add to tail\n3-Add to specific place";
 const deleteMsg = "1-Delete first task\n2-Delete last task\n3-Delete by index\n4-Delete by name\n5-Delete from x to y tasks\n6-Delete all";
 const displayMsg = "1-display (enter)\n2-display in alphabetical order \n3-display reversed"
-const searchMsg =
-    "Search By : \n" +
-    "1. index\n" +
-    "2. Strict string\n" +
-    "3. Normal String\n" +
-    "4. starting\n" +
-    "5. ending\n" +
-    "6. index range"
+
 
 
 let testArr = [];
@@ -105,7 +98,7 @@ function DisplayMenu() {
                 "Search By : \n" +
                 "1. index\n" +
                 "2. Strict string\n" +
-                "3. Normal String\n" +
+                "3. String\n" +
                 "4. starting\n" +
                 "5. ending\n" +
                 "6. index range"
