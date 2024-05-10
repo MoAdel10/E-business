@@ -13,9 +13,8 @@ export function SearchByIndex(array, index) {
 }
 
 export function searchByStrictName(array, name) {
-    name = name.toLowerCase();
     const result = array.reduce(function (result, item, index) {
-        if (item.toLowerCase().includes(name)) {
+        if (item.includes(name)) {
             result.push({ name: item, index: index + 1 });
         }
         return result;
@@ -70,7 +69,7 @@ function Search(Names) {
         "Search By : \n" +
         "1. index\n" +
         "2. Strict string\n" +
-        "3. Normal String\n" +
+        "3. String\n" +
         "4. starting\n" +
         "5. ending\n" +
         "6. index range"
